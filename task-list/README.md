@@ -3,4 +3,4 @@
 * JS Vanilla
 * localStorage
 
-<img src="uiP.PNG">
+<img src="ui.PNG">
