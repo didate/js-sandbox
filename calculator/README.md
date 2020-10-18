@@ -4,4 +4,4 @@
 
 * JS Vanilla
 
-<img src="image.PNG">
+<img src="image.PNG" width="100">
