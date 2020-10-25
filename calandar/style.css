@@ -1,0 +1,84 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    background-color:#A082F4;
+    color: #ffffff;
+
+}
+
+button{
+    border: none;
+    color: #ffffff;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button:focus{
+    outline: 0;
+}
+
+.arrow:hover {
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.arrow:active{
+    font-size: 17px;
+}
+
+
+.container{
+    background-color :   rgba(0,0,0,0.6);
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+    margin : 20px auto;
+    
+}
+
+.month-slider {
+    display: flex;
+    justify-content:space-around ;
+    height: 50px;
+    padding-top: 20px;
+}
+
+.dow {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+}
+.numeric-panel {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100%/7);
+    height: 50px;
+}
+
+.number:hover {
+    font-size: 20px;
+    cursor: pointer;
+}
+.number:active {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.not-active {
+    color: rgb(192, 191, 191);
+    font-weight: normal;
+}
+.current-day{
+    background-color: gray;
+    border-radius: 50%;
+}
