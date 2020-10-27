@@ -65,6 +65,11 @@ button:focus{
     height: 50px;
 }
 
+.number::selection{
+    background-color :   transparent;
+}
+
+
 .number:hover {
     font-size: 20px;
     cursor: pointer;
@@ -75,10 +80,10 @@ button:focus{
 }
 
 .not-active {
-    color: rgb(192, 191, 191);
+    color: rgb(126, 123, 123);
     font-weight: normal;
 }
 .current-day{
-    background-color: gray;
+   background-color :   rgba(0,0,0,0.2);
     border-radius: 50%;
 }
