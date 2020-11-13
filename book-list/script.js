@@ -23,6 +23,8 @@ class UI {
             const book = new Book(title, author, isbn);
             // Add book to List of Book
             this.addRow(book);
+
+            Store.addBook(book);
             this.showAlert('Book added', 'alert-success');
 
         }
@@ -70,13 +72,43 @@ class UI {
         if (target.className === 'delete') {
             // 1 ist parent is td the 2nd one is tr
             target.parentElement.parentElement.remove();
+            Store.deleteBook(target.parentElement.previousSibling.textContent);
             this.showAlert('Book removed', 'alert-success');
         }
         e.preventDefault();
     }
 }
 
+class Store {
+
+    static getBooks() {
+        return localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : [];
+    }
+    static addBook(book) {
+        const books = Store.getBooks();
+        books.push(book);
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+    static displayBooks() {
+        const books = Store.getBooks();
+        const ui = new UI();
+        books.forEach((book) => {
+            ui.addRow(book);
+        });
+    }
+    static deleteBook(isbn) {
+        let books = Store.getBooks();
+        books = books.filter(book => book.isbn !== isbn);
+        localStorage.setItem('books', JSON.stringify(books));
+        const ui = new UI();
+        ui.deleteItem()
+    }
+}
+
+
 const ui = new UI();
+
+document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
 // Event Listener add book
 document.getElementById('book-form').addEventListener('submit', ui.submit);
